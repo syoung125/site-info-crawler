@@ -1,0 +1,19 @@
+{
+  "name": "site-info-crawler",
+  "version": "1.0.0",
+  "description": "url로 제공한 사이트의 기본 메타데이터(title, image, description)를 크롤링합니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syoung125/site-info-crawler.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/syoung125/site-info-crawler/issues"
+  },
+  "homepage": "https://github.com/syoung125/site-info-crawler#readme"
+}
