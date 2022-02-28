@@ -1,2 +1,11 @@
 # site-info-crawler
-url로 제공한 사이트의 기본 메타데이터(title, image, description)를 크롤링합니다.
+
+Crawl base metadata such as title, image, description of provided url
+
+## How to excute crawler locally?
+
+```bash
+vercel dev
+```
+
+http://localhost:3000/api/info?url=[siteUrl]
