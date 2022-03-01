@@ -1,24 +1,13 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import cheerio from "cheerio";
 
-import { requestHTML } from "../utils/request";
+import SiteInfoCrawler from "../utils/site-info-crawler";
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     const { url } = req.query;
 
-    const html = await requestHTML(url.toString());
-    const $ = await cheerio.load(html);
-
-    const title = $('meta[property="og:title"]').attr("content");
-    const imageUrl = $('meta[property="og:image"]').attr("content");
-    const description = $('meta[property="og:description"]').attr("content");
-
-    const result = {
-      title,
-      imageUrl,
-      description,
-    };
+    const crawler = new SiteInfoCrawler(url.toString());
+    const { result } = (await crawler.crawl()).formatImageUrl();
 
     res.status(200).json(result);
   } catch (err: any) {
